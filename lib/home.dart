@@ -45,6 +45,17 @@ class MyAppHome extends StatelessWidget {
               },
               trailing: Icon(Icons.arrow_forward),
             ),
+            Divider(),
+            ListTile(
+              title: Text(
+                'circular_slider',
+                style: _biggerFont,
+              ),
+              onTap: () {
+                Navigator.pushNamed(context, '/circular_slider');
+              },
+              trailing: Icon(Icons.arrow_forward),
+            ),
           ],
         ),
       ),
