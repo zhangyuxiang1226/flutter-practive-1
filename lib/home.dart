@@ -56,6 +56,39 @@ class MyAppHome extends StatelessWidget {
               },
               trailing: Icon(Icons.arrow_forward),
             ),
+             Divider(),
+            ListTile(
+              title: Text(
+                'text_widget',
+                style: _biggerFont,
+              ),
+              onTap: () {
+                Navigator.pushNamed(context, '/text_widget');
+              },
+              trailing: Icon(Icons.arrow_forward),
+            ),
+             Divider(),
+            ListTile(
+              title: Text(
+                'container_widget',
+                style: _biggerFont,
+              ),
+              onTap: () {
+                Navigator.pushNamed(context, '/container_widget');
+              },
+              trailing: Icon(Icons.arrow_forward),
+            ),
+             Divider(),
+            ListTile(
+              title: Text(
+                'listView_widget',
+                style: _biggerFont,
+              ),
+              onTap: () {
+                Navigator.pushNamed(context, '/listView_widget');
+              },
+              trailing: Icon(Icons.arrow_forward),
+            ),
           ],
         ),
       ),
