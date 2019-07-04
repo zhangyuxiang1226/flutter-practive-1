@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 
 // 对runApp传参
 void main() => runApp(ListViewWidget(
-    // 生成1000条数据
+    // 生成1000条数据，通过这个函数传递的方式会报错，暂时不知道原因，
     // items: new List<String>.generate(1000, (i) => "Item $i")
-    items: ["item 1", "item 2"]
-    )
-  );
+    ));
 
 class ListViewWidget extends StatelessWidget {
-  final List<String> items;
+  // final List<String> items; // 这条对应上面的使用，这里不做赋值，通过函数传入的值
+  final List<String> items = List<String>.generate(1000, (i) => "Item $i");
   // 构造函数  super:调用父类
-  ListViewWidget({Key key, @required this.items}) : super(key: key);
+  // ListViewWidget({Key key, @required this.items}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,10 +32,10 @@ class ListViewWidget extends StatelessWidget {
 
           // 动态长列表
           body: new ListView.builder(
-            itemCount: 3,
+            itemCount: items.length,
             itemBuilder: (context, index) {
-              print(items);
-              // return new ListTile(title: new Text('${items[index]}'));
+              // print(items);
+              return new ListTile(title: new Text('${items[index]}'));
             },
           ),
         ));

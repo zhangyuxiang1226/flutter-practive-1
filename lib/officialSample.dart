@@ -59,7 +59,7 @@ class RandomWordsState extends State<RandomWords> {
         });
   }
 
-  // 添加、取消favorite
+  // 构造列表行方法，包含 添加、取消favorite
   Widget _buildRow(WordPair pair) {
     final bool alreadySaved = _saved.contains(pair);
     return ListTile(

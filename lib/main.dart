@@ -6,6 +6,8 @@ import './circleSlider.dart';
 import './textWidget.dart';
 import './containerWidget.dart';
 import './listViewWidget.dart';
+import './gridWidget.dart';
+import './layoutWidgets.dart';
 
 void main() => runApp(MaterialApp(
       home: MyAppHome(), // becomes the route named '/'
@@ -15,7 +17,9 @@ void main() => runApp(MaterialApp(
         '/circular_slider': (BuildContext context) => CircleSlider(),
         '/text_widget': (BuildContext context) => TextWidget(),
         '/container_widget': (BuildContext context) => ContainerWidget(),
+        '/gridView_widget': (BuildContext context) => GridWidget(),
         '/listView_widget': (BuildContext context) => ListViewWidget(),
+        '/layout_widget': (BuildContext context) => LayoutWidgets(),
       },
     ));
 
