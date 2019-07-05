@@ -1,31 +1,77 @@
 import 'package:flutter/material.dart';
-
+/**
+ * 包含的范例有：
+ * 1. 横向布局
+ * 2. 纵向布局
+ * 3. 层叠布局，定位布局
+ * 4. Card布局
+ */
 void main() => runApp(LayoutWidgets());
 
 class LayoutWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // 定义层叠布局
+    // 定义层叠布局变量
     var stack = new Stack(
-      alignment: const FractionalOffset(0.5, 0.5),
+      alignment: const FractionalOffset(0.5, 0.8), // 层叠对齐方式 dx, dy
       children: <Widget>[
         new CircleAvatar(
           backgroundImage: new NetworkImage(
-            'https://i2.hdslb.com/bfs/face/a71fd12c21905f402248883d0b09d8ac853e3088.jpg@72w_72h.webp',),
-          radius: 100.0,
+              'https://i1.hdslb.com/bfs/face/045d48038b9c0f21ba8e7417b8bb1b477cdda93c.png@168w_168h.webp'),
+          radius: 60.0,
         ),
-        // new CircleAvatar(
-        //   backgroundImage: new NetworkImage(
-        //       'https://i1.hdslb.com/bfs/face/045d48038b9c0f21ba8e7417b8bb1b477cdda93c.png@168w_168h.webp'),
-        //   radius: 100.0,
-        // ),
+        new CircleAvatar(
+          backgroundImage: new NetworkImage(
+            'https://i2.hdslb.com/bfs/face/a71fd12c21905f402248883d0b09d8ac853e3088.jpg@72w_72h.webp',
+          ),
+          radius: 40.0,
+        ),
         new Container(
           padding: EdgeInsets.all(10.0),
-          child: new Text('stack'),
+          child: new Text(
+            'stack',
+            style: TextStyle(color: Colors.white),
+          ),
           decoration: new BoxDecoration(
+            color: Colors.blueAccent,
           ),
         ),
+
+        // 定位布局
+        new Positioned(
+          top: 10.0,
+          left: 10.0,
+          child: new Text('Positioned-1'),
+        ),
+        new Positioned(
+          right: 10.0,
+          bottom: 10.0,
+          child: new Text('Positioned-2'),
+        ),
       ],
+    );
+
+    // 定义Card布局变量
+    var card = new Card(
+      child: new Column(
+        children: <Widget>[
+          ListTile(
+            title: new Text('card 1', style: TextStyle(fontWeight: FontWeight.bold),),
+            subtitle: new Text('subtitle-1'),
+            leading: new Icon(Icons.account_circle),
+          ),
+          ListTile(
+            title: new Text('card 2', style: TextStyle(fontWeight: FontWeight.bold),),
+            subtitle: new Text('subtitle-2'),
+            leading: new Icon(Icons.account_circle),
+          ),
+          ListTile(
+            title: new Text('card 3', style: TextStyle(fontWeight: FontWeight.bold),),
+            subtitle: new Text('subtitle-3'),
+            leading: new Icon(Icons.account_circle),
+          ),
+        ],
+      ),
     );
 
     return MaterialApp(
@@ -116,6 +162,15 @@ class LayoutWidgets extends StatelessWidget {
                 ),
                 Container(
                   child: stack,
+                ),
+
+                // Card布局
+                new Text(
+                  'Card布局',
+                  style: TextStyle(fontSize: 20.0),
+                ),
+                Container(
+                  child: card,
                 ),
               ],
             ),

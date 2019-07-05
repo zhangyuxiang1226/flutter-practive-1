@@ -11,6 +11,9 @@ class MyAppHome extends StatelessWidget {
     'listView_widget',
     'gridView_widget',
     'layout_widget',
+    'navigate',
+    'navigate2',
+    'navigate3',
   ];
   Widget build(BuildContext context) {
     return Scaffold(
